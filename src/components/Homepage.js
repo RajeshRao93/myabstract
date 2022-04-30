@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MDBIcon } from "mdbreact";
 import "./Homepage.css";
 import AboutMe from "./AboutMe";
+import getExchangeRates from "../action/converstionRates";
 
 const Homepage = () => {
+  useEffect(() => {
+    getExchangeRates();
+  });
+
   const linkedInUrl =
     "https://www.linkedin.com/in/rajesha-koppa-ramesha-0bbb45124/";
   const githubUrl = "https://github.com/RajeshRao93";
