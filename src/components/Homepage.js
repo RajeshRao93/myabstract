@@ -38,7 +38,7 @@ const Homepage = () => {
         <AboutMe />
       </div>
       <div className="copyright">
-        <a>
+        <a href="" target="_blank">
           Hits:
           <img
             src="https://hitwebcounter.com/counter/counter.php?page=7982168&style=0006&nbdigits=5&type=page&initCount=0"
