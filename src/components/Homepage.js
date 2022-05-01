@@ -6,13 +6,17 @@ import getExchangeRates from "../action/converstionRates";
 
 const Homepage = () => {
   useEffect(() => {
-    getExchangeRates();
+    setInterval(function () {
+      getExchangeRates();
+    }, interval);
   });
 
-  const linkedInUrl =
-    "https://www.linkedin.com/in/rajesha-koppa-ramesha-0bbb45124/";
-  const githubUrl = "https://github.com/RajeshRao93";
-  const email = "rajesh.rao0593@gmail.com";
+  const minutes = 60;
+  const interval = minutes * 60 * 1000;
+
+  const linkedInUrl = process.env.REACT_APP_LINKED_IN_URL;
+  const githubUrl = process.env.REACT_APP_GIT_HUB_URL;
+  const email = process.env.REACT_APP_EMAIL_ADDRESS;
   return (
     <div className="homepage">
       <div className="welcome-section">Welcome!</div>

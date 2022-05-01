@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.27.2",
+    "emailjs-com": "^3.2.0",
     "interweave": "^12.5.0",
     "mdbreact": "^4.25.6",
     "react": "^16.13.1",
