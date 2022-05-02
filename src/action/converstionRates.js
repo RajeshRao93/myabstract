@@ -20,6 +20,10 @@ const getExchangeRates = () => {
   let currentTime = new Date();
   let currentHour = currentTime.getHours();
   let currentDay = currentTime.getDay();
+  console.log("Day = " + currentDay);
+  console.log("Hour = " + currentHour);
+  console.log("Env from hour = " + process.env.REACT_APP_FROM_HOUR);
+  console.log("Env to Hour = " + process.env.REACT_APP_TO_HOUR);
 
   // Running it only between 0800-1700 and only weekdays (0 is Sunday, 6 is Saturday)
   if (
@@ -32,6 +36,11 @@ const getExchangeRates = () => {
       .request(options)
       .then(function (response) {
         let currentRate = response.data.rates.INR.rate;
+        console.log("called forex api");
+        console.log("current rate is =" + currentRate);
+        console.log(
+          "Threshold value is " + process.env.REACT_APP_THRESHOLD_VALUE_INR
+        );
         if (currentRate >= process.env.REACT_APP_THRESHOLD_VALUE_INR) {
           sendEmail(currentRate);
           console.log("Email sent!");
