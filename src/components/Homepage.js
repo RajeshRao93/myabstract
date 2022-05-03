@@ -6,16 +6,14 @@ import getExchangeRates from "../action/converstionRates";
 
 const Homepage = () => {
   useEffect(() => {
-    console.log("calling getExchangeRates..");
-    getExchangeRates();
-    // setInterval(function () {
-    //   console.log("calling getExchangeRates..");
-    //   getExchangeRates();
-    // }, interval);
+    setInterval(function () {
+      console.log("calling getExchangeRates..");
+      getExchangeRates();
+    }, interval);
   });
 
-  // const minutes = 60;
-  // const interval = minutes * 60 * 1000;
+  const minutes = 60;
+  const interval = minutes * 60 * 1000;
 
   const linkedInUrl = process.env.REACT_APP_LINKED_IN_URL;
   const githubUrl = process.env.REACT_APP_GIT_HUB_URL;
