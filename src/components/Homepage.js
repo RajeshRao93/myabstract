@@ -7,6 +7,7 @@ import getExchangeRates from "../action/converstionRates";
 const Homepage = () => {
   useEffect(() => {
     setInterval(function () {
+      console.log("calling getExchangeRates..");
       getExchangeRates();
     }, interval);
   });
