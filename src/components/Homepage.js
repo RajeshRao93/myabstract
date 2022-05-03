@@ -14,8 +14,8 @@ const Homepage = () => {
     // }, interval);
   });
 
-  const minutes = 60;
-  const interval = minutes * 60 * 1000;
+  // const minutes = 60;
+  // const interval = minutes * 60 * 1000;
 
   const linkedInUrl = process.env.REACT_APP_LINKED_IN_URL;
   const githubUrl = process.env.REACT_APP_GIT_HUB_URL;
