@@ -17,8 +17,8 @@ const AboutMe = () => {
       </div>
       <div className="about-section description">
         <strong className="card-description text-center">
-          A passionate software developer fascinated in developing web
-          applications. Currently working for a healthcare startup in Munich.{" "}
+          A passionate software developer fascinated with developing web
+          applications.
           <br />
           Focussing on full stack development of web applications.
           <br />
