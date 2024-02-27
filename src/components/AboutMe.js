@@ -151,7 +151,7 @@ const AboutMe = () => {
                     >
                       {project.hostedLink}
                     </a>
-                    {project.hostedLink != "" && <span>&nbsp;|&nbsp; </span>}
+                    {project.hostedLink !== "" && <span>&nbsp;|&nbsp; </span>}
                     <a
                       href={project.gitLink}
                       target="_blank"

@@ -39,7 +39,7 @@ const Homepage = () => {
         </a>
         <p>
           &copy; {new Date().getFullYear()} Copyright:
-          <a href="">{email} </a>
+          <a href="/home">{email} </a>
         </p>
       </div>
     </div>
