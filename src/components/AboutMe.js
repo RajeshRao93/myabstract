@@ -8,7 +8,7 @@ const AboutMe = () => {
   const techSkills = [
     {
       division: "Frontend",
-      skills: "Javascript, Typescript, React JS, Redux, HTML, CSS",
+      skills: "Javascript, Typescript, React JS, Redux, HTML5, CSS",
     },
     {
       division: "Backend",
