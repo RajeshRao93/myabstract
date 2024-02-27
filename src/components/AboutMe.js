@@ -122,7 +122,7 @@ const AboutMe = () => {
             {techSkills.map((skill, i) => (
               <div key={i}>
                 <span>
-                  <strong>{skill.division} :</strong>
+                  <b>{skill.division} :</b>
                   &nbsp;{skill.skills}
                 </span>
               </div>
