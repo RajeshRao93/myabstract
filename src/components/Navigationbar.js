@@ -4,24 +4,7 @@ import { MDBIcon } from "mdbreact";
 import "./Navigationbar.css";
 
 const Navigationbar = () => {
-  const [scrollState, setScrollState] = useState(false);
-  useEffect(() => {
-    //change nav bar color on scroll
-    // let listener = document.addEventListener("scroll", (e) => {
-    //   var scrollLength = document.scrollingElement.scrollTop;
-    //   if (scrollLength >= 10) {
-    //     if (!scrollState) setScrollState(true);
-    //   } else {
-    //     if (scrollState) setScrollState(false);
-    //   }
-    // });
-    // return () => {
-    //   document.removeEventListener("scroll", listener);
-    // };
-  }, []);
-
   const navbarStyle = {
-    // backgroundColor: !scrollState ? "transparent" : "#005fff80",
     backgroundColor: "transparent",
   };
 
