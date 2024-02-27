@@ -13,9 +13,6 @@ const Homepage = () => {
     }, 50);
   }, [aboutMe]);
 
-  const minutes = 60;
-  const interval = minutes * 60 * 1000;
-
   const email = process.env.REACT_APP_EMAIL_ADDRESS;
 
   return (
@@ -42,7 +39,7 @@ const Homepage = () => {
         </a>
         <p>
           &copy; {new Date().getFullYear()} Copyright:
-          <a>{email} </a>
+          <a href="">{email} </a>
         </p>
       </div>
     </div>

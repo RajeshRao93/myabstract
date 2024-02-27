@@ -97,11 +97,21 @@ const AboutMe = () => {
           Find my profile on: <br />
           <span>
             <MDBIcon fab icon="linkedin" />
-            <a className="profiles" href={linkedInUrl} target="_blank">
+            <a
+              className="profiles"
+              href={linkedInUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               LinkedIn
             </a>
             <MDBIcon fab icon="github" />
-            <a className="profiles" href={githubUrl} target="_blank">
+            <a
+              className="profiles"
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Github
             </a>
           </span>
@@ -134,11 +144,19 @@ const AboutMe = () => {
                   <p>
                     <MDBIcon fas icon="external-link-alt" />
                     &nbsp;
-                    <a href={project.hostedLink} target="_blank">
+                    <a
+                      href={project.hostedLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {project.hostedLink}
                     </a>
                     {project.hostedLink != "" && <span>&nbsp;|&nbsp; </span>}
-                    <a href={project.gitLink} target="_blank">
+                    <a
+                      href={project.gitLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {project.gitLink}
                     </a>
                   </p>

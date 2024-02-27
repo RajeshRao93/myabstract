@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Button } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import { MDBIcon } from "mdbreact";
 import "./Navigationbar.css";
 
@@ -20,7 +20,6 @@ const Navigationbar = () => {
     };
   }, [scrollState]);
 
-  const buttonStyle = { borderRadius: "2rem", textTransform: "lowercase" };
   const navbarStyle = {
     backgroundColor: !scrollState ? "transparent" : "#005fff80",
   };
