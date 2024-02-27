@@ -1,15 +1,15 @@
 .navbar {
+  position: relative;
   height: 60px;
+  width: 100%;
 }
 
 .download-button {
   position: absolute;
-  display: flex;
-  align-items: center;
-  right: 10px;
-  font-weight: 200;
+  right: 30px;
+  top: 20px;
+  font-weight: 600;
   color: white;
-  margin-right: 25px;
 }
 
 .logo {

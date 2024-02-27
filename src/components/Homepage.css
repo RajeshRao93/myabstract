@@ -1,8 +1,9 @@
-div.homepage {
+.homepage {
   width: 100%;
   height: 100%;
   background-image: url("../Images/bgImg5.jpg");
   position: absolute;
+  background-size: 100%;
 }
 
 .welcome-section {
@@ -16,7 +17,15 @@ div.homepage {
   margin-left: 2%;
 }
 
-@-webkit-keyframes cloudLoop {
+.moving-clouds {
+  width: 100%;
+  height: 50%;
+  float: left;
+  /* animation: cloudLoop 20s linear infinite; */
+  background-image: url("../Images/clouds.61c4e000.png");
+}
+
+@keyframes cloudLoop {
   0% {
     margin-left: 0px;
   }
@@ -25,19 +34,9 @@ div.homepage {
   }
 }
 
-.moving-clouds {
-  width: 100%;
-  height: 60%;
-  float: left;
-  z-index: 1;
-  -webkit-animation: cloudLoop 100s linear infinite;
-  animation: cloudLoop 100s linear infinite;
-  background-image: url("../Images/clouds.61c4e000.png");
-}
-
 .profile-section {
   width: 100%;
-  height: 10%;
+  height: 17%;
   float: left;
   font-weight: 500;
   font-size: xx-large;
@@ -45,28 +44,12 @@ div.homepage {
   margin-left: 2%;
 }
 
-.about-section {
-  color: black;
-  width: 100%;
-  height: 80%;
-  float: left;
-  background-color: rgb(197, 214, 218);
-  display: flex;
-  flex-direction: column;
-  padding-top: 25px;
-  align-items: center;
-}
-
 .copyright {
   width: 100%;
   height: 2%;
   float: left;
-  background-color: rgb(197, 214, 218);
+  background-color: transparent;
   display: flex;
   justify-content: center;
   font-size: small;
-}
-
-.profiles {
-  color: rgb(255, 255, 0);
 }

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Navbar, Button } from "react-bootstrap";
 import { MDBIcon } from "mdbreact";
 import "./Navigationbar.css";
-import image from "../Images/bgImg5.jpg";
 
 const Navigationbar = () => {
   const [scrollState, setScrollState] = useState(false);
@@ -10,7 +9,7 @@ const Navigationbar = () => {
     //change nav bar color on scroll
     let listener = document.addEventListener("scroll", (e) => {
       var scrollLength = document.scrollingElement.scrollTop;
-      if (scrollLength >= 150) {
+      if (scrollLength >= 10) {
         if (!scrollState) setScrollState(true);
       } else {
         if (scrollState) setScrollState(false);
@@ -24,7 +23,6 @@ const Navigationbar = () => {
   const buttonStyle = { borderRadius: "2rem", textTransform: "lowercase" };
   const navbarStyle = {
     backgroundColor: !scrollState ? "transparent" : "#005fff80",
-    justifyContent: "center",
   };
 
   return (
@@ -33,17 +31,15 @@ const Navigationbar = () => {
       style={navbarStyle}
       fixed="top"
     >
-      <Navbar.Brand href="/Home/">
+      <Navbar.Brand href="/home">
         <h2 className="logo">
           <MDBIcon fab icon="phoenix-framework" /> myabstract
         </h2>
       </Navbar.Brand>
 
       <div className="download-button">
-        <a style={{ display: "none" }} href={image} download="Image.jpg">
-          <Button active={false} style={buttonStyle}>
-            Download cv
-          </Button>
+        <a href="/aboutme" style={{ color: "white" }}>
+          <p>About me</p>
         </a>
       </div>
     </Navbar>
