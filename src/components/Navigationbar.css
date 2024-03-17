@@ -8,10 +8,10 @@
   right: 30px;
   top: 20px;
   font-weight: 600;
-  color: white;
+  color: var(--text-color);
 }
 
 .logo {
-  font-weight: 500;
-  color: white;
+  font-weight: var(--link-font-weight);
+  color: var(--text-color);
 }

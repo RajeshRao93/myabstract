@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Homepage.css";
+import { Image } from "react-bootstrap";
+import image from "../Images/RajeshPic.jpg";
+import AboutMe from "./AboutMe";
 
 const Homepage = () => {
-  const aboutMeText = "Click here to know about me!";
+  const defaultText = "Hey, I'm Rajesh";
+  const aboutMeText = "I enjoy designing websites and writing code";
   const [aboutMe, setAboutMe] = useState("");
 
   useEffect(() => {
@@ -14,19 +18,23 @@ const Homepage = () => {
   }, [aboutMe]);
 
   const email = process.env.REACT_APP_EMAIL_ADDRESS;
-
+  document.title = "Home";
   return (
     <div className="homepage">
-      <div className="welcome-section">Welcome!</div>
       <div className="profile-section">
-        <div>
-          <a href="/aboutme" style={{ color: "white" }}>
-            <h1>>{aboutMe}</h1>
-          </a>
+        <div className="intro">
+          <h3 className="name-text">{defaultText}</h3>
+          <h1 className="about-text">{aboutMe}</h1>
+        </div>
+        <div className="picture">
+          <div className="about-section image">
+            <Image style={{ width: "50%" }} src={image} roundedCircle />
+          </div>
         </div>
       </div>
 
       <div className="moving-clouds"></div>
+      <AboutMe />
       <div className="copyright">
         <a href="https://www.hitwebcounter.com">
           Hits:
@@ -37,10 +45,6 @@ const Homepage = () => {
             border="0"
           />
         </a>
-        <p>
-          &copy; {new Date().getFullYear()} Copyright:
-          <a href="/home">{email} </a>
-        </p>
       </div>
     </div>
   );

@@ -1,52 +1,56 @@
 .homepage {
   width: 100%;
-  height: 100%;
-  background-image: url("../Images/bgImg5.jpg");
+  height: 100vh;
+  min-height: 100%;
   position: absolute;
+  background: var(--background-color);
 }
 
-.welcome-section {
-  width: 100%;
-  height: 30%;
-  float: left;
-  font-weight: 900;
-  font-size: 6vw;
-  color: white;
-  padding-top: 50px;
-  margin-left: 2%;
+.name-text {
+  font-size: var(--name-font-size);
+  font-weight: var(--header-font-weight);
+  color: var(--name-text-color);
+  margin-bottom: 20px;
+  line-height: 1.333em;
+  font-family: Satoshi, sans-serif;
+}
+
+.about-text {
+  font-size: var(--about-font-size);
+  font-weight: var(--header-font-weight);
+  color: var(--text-color);
+  margin-top: 0;
+  line-height: 1.3em;
+  font-family: Satoshi, sans-serif;
 }
 
 .moving-clouds {
   width: 100%;
   height: 50%;
-  float: left;
-  /* animation: cloudLoop 20s linear infinite; */
-  background-image: url("../Images/clouds.61c4e000.png");
-}
-
-@keyframes cloudLoop {
-  0% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left: 1950px;
-  }
 }
 
 .profile-section {
   width: 100%;
   height: 17%;
-  float: left;
-  font-weight: 500;
-  font-size: xx-large;
-  color: white;
-  margin-left: 2%;
+  margin: 15% 10% 0% 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.intro {
+  width: 40%;
+}
+
+.picture {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  padding-top: 150px;
 }
 
 .copyright {
   width: 100%;
   height: 2%;
-  float: left;
   background-color: transparent;
   display: flex;
   justify-content: center;

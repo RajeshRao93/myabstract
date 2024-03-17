@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image } from "react-bootstrap";
-import image from "../Images/RajeshPic.jpg";
+import progImg from "../Images/prog.jpg";
+import skillsImg from "../Images/skills.png";
+
 import "./AboutMe.css";
 import { MDBIcon } from "mdbreact";
+import { Carousel } from "react-bootstrap";
 
 const AboutMe = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setActiveIndex(selectedIndex);
+  };
+
+  const handlePrev = () => {
+    setActiveIndex(
+      (prevIndex) => (prevIndex - 1 + projects.length) % projects.length
+    );
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % projects.length);
+  };
+
   const techSkills = [
     {
       division: "Frontend",
@@ -75,50 +94,52 @@ const AboutMe = () => {
   return (
     <div className="about-container">
       <div className="about-section">
-        <h1>About me</h1>
-        <div className="about-section image">
-          <Image style={{ width: "10%" }} src={image} roundedCircle />
+        <div className="step">
+          <div className="about-left">
+            <Image style={{ width: "60%" }} src={progImg} />
+          </div>
+          <div className="about-right">
+            <h2 className="header">About me</h2>
+            <h5>
+              <strong>Rajesha Koppa Ramesha</strong>
+            </h5>
+            <div>
+              <p>
+                A passionate software developer fascinated with developing web
+                applications.
+                <br />
+                Focussing on full stack development of web applications.
+                <br />
+                Contact me on email: <a href="">rajesh.rao0593@gmail.com</a>
+              </p>
+              Find my profile on: <br />
+              <span>
+                <MDBIcon fab icon="linkedin" />
+                <a
+                  className="profiles"
+                  href={linkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  &nbsp;LinkedIn
+                </a>
+                <MDBIcon fab icon="github" />
+                <a
+                  className="profiles"
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  &nbsp;Github
+                </a>
+              </span>
+            </div>
+          </div>
         </div>
-        <div className="about-section title">
-          <h5>
-            <strong>Rajesha Koppa Ramesha</strong>
-          </h5>
-          <h5>Software Developer</h5>
-        </div>
-        <div className="about-section description">
-          <strong className="card-description text-center">
-            A passionate software developer fascinated with developing web
-            applications.
-            <br />
-            Focussing on full stack development of web applications.
-            <br />
-            Contact me on email: rajesh.rao0593@gmail.com
-          </strong>
-          Find my profile on: <br />
-          <span>
-            <MDBIcon fab icon="linkedin" />
-            <a
-              className="profiles"
-              href={linkedInUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-            <MDBIcon fab icon="github" />
-            <a
-              className="profiles"
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Github
-            </a>
-          </span>
-        </div>
-        <div className="about-section skills">
-          <h3>Technical skills</h3>
-          <div>
+
+        <div className="step">
+          <div className="skill-left">
+            <h2 className="header">Technical skills</h2>
             {techSkills.map((skill, i) => (
               <div key={i}>
                 <span>
@@ -128,46 +149,56 @@ const AboutMe = () => {
               </div>
             ))}
           </div>
+          <div className="skill-right">
+            <Image style={{ width: "70%" }} src={skillsImg} />
+          </div>
         </div>
-        <div className="about-section projects">
-          <h3>Projects</h3>
-          <div className="project-details">
-            {projects.map((project, i) => (
-              <div key={i} className="project">
-                <div className="project-name">
-                  <MDBIcon fas icon="project-diagram" />
-                  &nbsp;{project.name}
-                </div>
-                <div className="project-description">
-                  <span> {project.desc}</span>
-                  <br />
-                  <p>
-                    <MDBIcon fas icon="external-link-alt" />
-                    &nbsp;
-                    <a
-                      href={project.hostedLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {project.hostedLink}
-                    </a>
-                    {project.hostedLink !== "" && <span>&nbsp;|&nbsp; </span>}
+
+        <div className="project-carousel">
+          <div className="carousel-nav" onClick={handlePrev}>
+            &lt;
+          </div>
+          <div className="projects">
+            <h2 className="header">Projects</h2>
+            <Carousel
+              activeIndex={activeIndex}
+              onSelect={handleSelect}
+              interval={null}
+            >
+              {projects.map((project, index) => (
+                <Carousel.Item key={index}>
+                  <div className="project-card">
+                    <h3 className="project-title">{project.name}</h3>
+                    <p className="project-description">{project.desc}</p>
+                    {project.hostedLink != "" && (
+                      <a
+                        href={project.hostedLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="demo-link"
+                      >
+                        View Demo
+                      </a>
+                    )}
                     <a
                       href={project.gitLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="demo-link"
                     >
-                      {project.gitLink}
+                      Github Link
                     </a>
-                  </p>
-                  <p>
-                    <MDBIcon fas icon="laptop-code" />
-                    &nbsp;
-                    {project.language}
-                  </p>
-                </div>
-              </div>
-            ))}
+                    <p className="project-description">
+                      <MDBIcon fas icon="laptop-code" />
+                      &nbsp;{project.language}
+                    </p>
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </div>
+          <div className="carousel-nav" onClick={handleNext}>
+            &gt;
           </div>
         </div>
       </div>
