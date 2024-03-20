@@ -1,7 +1,7 @@
 .about-container {
   /* width: 100vw; */
   background: var(--background-color);
-  overflow: auto;
+  overflow: hidden;
 }
 
 .about-section {
